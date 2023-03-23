@@ -22,12 +22,12 @@ class NumericInput extends TextInput
 <html lang="en">
 
 <head>
-    // meta etc
+    <!-- meta etc. -->
     <title>Document</title>
 </head>
 
 <body>
-    // beauty site
+    <!-- Beauty Site -->
     <form>
         <label for="textinput">Text Input</label>
         <input type="text" name="TextInput" id="textinput" />
