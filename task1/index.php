@@ -19,12 +19,12 @@ $pipeline = new Pipeline();
 
 print_r($pipeline->make(
     function ($var) {
-        return $var * 3;
+        return $var * 3; // 9
     },
     function ($var) {
-        return $var + 1;
+        return $var + 1; // 10
     },
     function ($var) {
-        return $var / 2;
+        return $var / 2; // 5
     }
 )(3));
