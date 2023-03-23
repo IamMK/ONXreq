@@ -24,11 +24,20 @@ class NumericInput extends TextInput
 <head>
     <!-- meta etc. -->
     <title>Document</title>
+    <style>
+        .userInterface {
+            margin: auto;
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Beauty Site -->
-    <form>
+    <form class="userInterface">
         <label for="textinput">Text Input</label>
         <input type="text" name="TextInput" id="textinput" />
         <label for="numericinput">Numeric Input</label>
