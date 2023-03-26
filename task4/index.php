@@ -1,7 +1,5 @@
 <?php
 
-
-
 class Thesaurus
 {
 
@@ -9,7 +7,6 @@ class Thesaurus
 
     public function getSynonyms($word)
     {
-        //?word=
         $curl = curl_init($this->apiUrl . '?word=' . $word);
         curl_setopt_array($curl, $this->options);
         $response = curl_exec($curl);
@@ -46,6 +43,8 @@ print_r($thesaurus->getSynonyms('small'));
 // {"word": "small", 
 // "synonyms": ["small-scale", "humble", "low", "lowly", "belittled", "small", "pocket-sized", "minuscule", "pocket-size", "modest", "diminished", "little", "minor"], 
 // "antonyms": ["large", "big"]}
+
 echo '<br />';
+
 print_r($thesaurus->getSynonyms('dfg'));
 // {"word": "dfg", "synonyms": [], "antonyms": []}
