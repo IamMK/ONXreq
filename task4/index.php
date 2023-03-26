@@ -1,13 +1,16 @@
 <?php
 
+
+
 class Thesaurus
 {
 
     private $apiUrl, $apiKey, $headers, $options;
 
-    public function getSynonyms()
+    public function getSynonyms($word)
     {
-        $curl = curl_init();
+        //?word=
+        $curl = curl_init($this->apiUrl . '?word=' . $word);
         curl_setopt_array($curl, $this->options);
         $response = curl_exec($curl);
         $err = curl_error($curl);
@@ -15,8 +18,7 @@ class Thesaurus
 
         if ($err) return "cURL Error #:" . $err;
         else {
-            $result = json_decode($response, true);
-            return $result;
+            return $response;
         }
     }
 
@@ -26,7 +28,6 @@ class Thesaurus
         $this->apiKey = $apiKey;
         $this->headers = array('X-Api-Key: ' . $this->apiKey);
         $this->options = array(
-            CURLOPT_URL => $this->apiUrl,
             CURLOPT_HTTPHEADER => $this->headers,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
@@ -39,6 +40,12 @@ class Thesaurus
     }
 }
 
-$thesaurus = new Thesaurus('https://api.api-ninjas.com/v1/thesaurus?word=', 'tMW6Onh9dP+dipQb+9nd4Q==itr6beTTtG4mmq3v');
+$thesaurus = new Thesaurus('https://api.api-ninjas.com/v1/thesaurus', '_');
 
-print_r($thesaurus->getSynonyms());
+print_r($thesaurus->getSynonyms('small'));
+// {"word": "small", 
+// "synonyms": ["small-scale", "humble", "low", "lowly", "belittled", "small", "pocket-sized", "minuscule", "pocket-size", "modest", "diminished", "little", "minor"], 
+// "antonyms": ["large", "big"]}
+echo '<br />';
+print_r($thesaurus->getSynonyms('dfg'));
+// {"word": "dfg", "synonyms": [], "antonyms": []}
