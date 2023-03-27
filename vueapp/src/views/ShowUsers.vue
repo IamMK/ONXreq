@@ -16,7 +16,7 @@
       </button>
       <h3>{{ userDetails.name }}</h3>
       <h4>Employee:</h4>
-      <p>{{ userDetails.employeeId }}</p>
+      <p>{{ userDetails.employee }}</p>
       <h4>Last purchases:</h4>
       <section>
         <p v-for="purchase in userDetails.purchases" :key="purchase.id">

@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "Jan Kowalski",
-      "employeeId": "4",
+      "employee": "Łukasz Wojciechowski",
       "car": {
         "make": "Toyota",
         "model": "Corolla",
@@ -31,7 +31,7 @@
     {
       "id": "2",
       "name": "Anna Nowak",
-      "employeeId": "5",
+      "employee": "Małgorzata Kowalczyk",
       "car": {
         "make": "Volkswagen",
         "model": "Golf",
@@ -54,7 +54,7 @@
     {
       "id": "3",
       "name": "Piotr Nowakowski",
-      "employeeId": "4",
+      "employee": "Paweł Nowicki",
       "car": {
         "make": "Honda",
         "model": "Civic",
@@ -82,7 +82,7 @@
     {
       "id": "4",
       "name": "Maria Kaczmarek",
-      "employeeId": "5",
+      "employee": "Martyna Kaczmarczyk",
       "car": {
         "make": "Fiat",
         "model": "Punto",

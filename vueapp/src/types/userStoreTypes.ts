@@ -1,7 +1,7 @@
 export interface Customer {
   id: string;
   name: string;
-  employeeId: string;
+  employee: string;
   car: {
     make: string;
     model: string;
