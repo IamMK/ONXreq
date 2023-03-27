@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import TaskFirst from "../views/TaskFirst.vue";
+import ShowUsers from "../views/ShowUsers.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: "/taskfirst",
-    name: "taskfirst",
-    component: TaskFirst,
+    path: "/showusers",
+    name: "showusers",
+    component: ShowUsers,
   },
 ];
 
