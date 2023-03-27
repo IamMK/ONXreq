@@ -1,7 +1,7 @@
 import { Customer } from "@/types/userStoreTypes";
 import { defineStore } from "pinia";
 
-export const useUserStore = defineStore("app", {
+export const useUserStore = defineStore("users", {
   state() {
     return {
       users: null as null | Customer[],
