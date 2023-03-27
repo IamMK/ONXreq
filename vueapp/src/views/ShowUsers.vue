@@ -9,6 +9,11 @@
       </section>
     </section>
     <section v-if="userDetails" class="details">
+      <button
+        @click="userStore.deleteUser(userDetails ? userDetails.id : 'nothing')"
+      >
+        X
+      </button>
       <h3>{{ userDetails.name }}</h3>
       <h4>Employee:</h4>
       <p>{{ userDetails.employeeId }}</p>
@@ -51,7 +56,7 @@ const userTotalSpend = computed(() => {
   return spend;
 });
 const getUsers = async () => {
-  await userStore.request();
+  await userStore.getUsers();
 };
 
 onMounted(() => {
