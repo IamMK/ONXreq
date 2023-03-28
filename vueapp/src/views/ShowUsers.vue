@@ -32,7 +32,7 @@
 
 <script setup lang="ts">
 import { useUserStore } from "@/store/users";
-import { computed, onMounted } from "vue";
+import { computed } from "vue";
 import { useRoute } from "vue-router";
 
 const userStore = useUserStore();
@@ -56,13 +56,6 @@ const userTotalSpend = computed(() => {
   }
   return spend;
 });
-const getUsers = async () => {
-  await userStore.getUsers();
-};
-
-onMounted(() => {
-  getUsers();
-});
 </script>
 
 <style lang="scss">
@@ -72,5 +65,6 @@ onMounted(() => {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 </style>

@@ -14,3 +14,13 @@ export interface Customer {
     price: number;
   }[];
 }
+
+export interface UserData {
+  name: string;
+  car: {
+    color: string;
+    make: string;
+    model: string;
+    year: number;
+  };
+}

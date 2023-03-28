@@ -6,6 +6,21 @@
   <router-view />
 </template>
 
+<script setup lang="ts">
+import { onMounted } from "vue";
+import { useUserStore } from "./store/users";
+
+const userStore = useUserStore();
+
+const getUsers = async () => {
+  await userStore.getUsers();
+};
+
+onMounted(() => {
+  getUsers();
+});
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

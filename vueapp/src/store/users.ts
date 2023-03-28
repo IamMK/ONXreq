@@ -1,4 +1,4 @@
-import { Customer } from "@/types/userStoreTypes";
+import { Customer, UserData } from "@/types/userStoreTypes";
 import { defineStore } from "pinia";
 
 export const useUserStore = defineStore("users", {
@@ -17,15 +17,7 @@ export const useUserStore = defineStore("users", {
         }
       );
     },
-    async addUser(user: {
-      name: string;
-      car: {
-        color: string;
-        make: string;
-        model: string;
-        year: number;
-      };
-    }) {
+    async addUser(user: UserData) {
       let id = "1";
       let userNumber = null;
       if (this.users) {
@@ -45,6 +37,7 @@ export const useUserStore = defineStore("users", {
           body: JSON.stringify(userData),
         }
       );
+      this.users?.push(userData);
     },
     async deleteUser(id: string) {
       const index = this.users?.findIndex((user) => user.id === id) as number;
