@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import ShowUsers from "../views/ShowUsers.vue";
-// import ShowUserDetails from "@/components/ShowUserDetails.vue";
+import AddUser from "../views/AddUser.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -8,6 +8,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "showusers",
     component: ShowUsers,
     props: true,
+  },
+  {
+    path: "/adduser",
+    name: "adduser",
+    component: AddUser,
   },
 ];
 

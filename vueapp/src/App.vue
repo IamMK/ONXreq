@@ -1,6 +1,7 @@
 <template>
   <nav>
-    <router-link to="showusers">Task First</router-link>
+    <router-link :to="{ name: 'showusers' }">Show users</router-link>
+    <router-link :to="{ name: 'adduser' }">Add user</router-link>
   </nav>
   <router-view />
 </template>
@@ -16,10 +17,10 @@
 
 nav {
   padding: 30px;
-
   a {
     font-weight: bold;
     color: #2c3e50;
+    padding: 0 20px;
 
     &.router-link-exact-active {
       color: #42b983;

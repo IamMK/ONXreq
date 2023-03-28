@@ -1,6 +1,7 @@
 <template>
   <section>
     <h1>Users</h1>
+    <button>Add</button>
     <section class="users">
       <section v-for="user in userStore.users" :key="user.id">
         <router-link :to="{ name: 'showusers', params: { id: user.id } }">
@@ -48,7 +49,7 @@ const userDetails = computed(() => {
 
 const userTotalSpend = computed(() => {
   let spend = 0;
-  if (userDetails.value) {
+  if (userDetails.value?.purchases) {
     userDetails.value.purchases.forEach((element) => {
       spend += element.price;
     });
