@@ -2,6 +2,7 @@
   <nav>
     <router-link :to="{ name: 'showusers' }">Show users</router-link>
     <router-link :to="{ name: 'adduser' }">Add user</router-link>
+    <router-link :to="{ name: 'modifyuser' }">Modify user</router-link>
   </nav>
   <router-view />
 </template>
