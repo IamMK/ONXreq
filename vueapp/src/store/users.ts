@@ -63,8 +63,6 @@ export const useUserStore = defineStore("users", {
       }
 
       const response = await request.json();
-      console.log(response);
-
       this.users = response;
     },
   },
