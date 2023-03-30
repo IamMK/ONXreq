@@ -53,8 +53,11 @@ export const useUserStore = defineStore("users", {
         });
     },
     async updateUser(data: UserData) {
+      const index = this.users?.findIndex(
+        (user) => user.id === data.id
+      ) as number;
       await fetch(
-        `https://vuetask-1ea6b-default-rtdb.europe-west1.firebasedatabase.app/customers/${data.id}.json`,
+        `https://vuetask-1ea6b-default-rtdb.europe-west1.firebasedatabase.app/customers/${index}.json`,
         {
           method: "PATCH",
           body: JSON.stringify(data),
