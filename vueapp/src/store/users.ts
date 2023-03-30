@@ -52,6 +52,17 @@ export const useUserStore = defineStore("users", {
           this.syncUsers();
         });
     },
+    async updateUser(data: UserData) {
+      await fetch(
+        `https://vuetask-1ea6b-default-rtdb.europe-west1.firebasedatabase.app/customers/${data.id}.json`,
+        {
+          method: "PATCH",
+          body: JSON.stringify(data),
+        }
+      ).then(() => {
+        this.getUsers();
+      });
+    },
     async getUsers() {
       const request = await fetch(
         `https://vuetask-1ea6b-default-rtdb.europe-west1.firebasedatabase.app/customers.json`

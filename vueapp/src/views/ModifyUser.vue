@@ -10,7 +10,7 @@
         <h2>{{ user.name }}</h2>
       </button>
     </section>
-    <form class="adduserForm">
+    <form class="adduserForm" @submit.prevent="modifyUser()">
       <label for="name">Imię i nazwisko:</label>
       <input type="text" id="name" name="name" v-model.trim="userData.name" />
       <label for="name">Pracownik:</label>
@@ -59,6 +59,7 @@ import { reactive } from "vue";
 
 const userStore = useUserStore();
 const userData = reactive({
+  id: "",
   name: "",
   car: {
     color: "",
@@ -76,9 +77,14 @@ const getDataToModify = (id: string) => {
     userToModify = data.find((customer) => customer.id === id);
   }
   if (userToModify) {
+    userData.id = id;
     userData.name = userToModify.name;
     userData.car = userToModify.car;
     userData.employee = userToModify.employee;
   }
+};
+
+const modifyUser = () => {
+  userStore.updateUser(userData);
 };
 </script>

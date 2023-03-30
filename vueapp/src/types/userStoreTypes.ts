@@ -16,6 +16,7 @@ export interface Customer {
 }
 
 export interface UserData {
+  id?: string;
   name: string;
   car: {
     color: string;
@@ -23,4 +24,5 @@ export interface UserData {
     model: string;
     year: number;
   };
+  employee?: string;
 }
